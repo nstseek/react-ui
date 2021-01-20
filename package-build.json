@@ -1,0 +1,25 @@
+{
+  "name": "@nstseek/react-ui",
+  "version": "1.0.0",
+  "description": "Ready-to-use UI components for React applications",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nstseek/react-ui.git"
+  },
+  "keywords": ["react", "ui", "components"],
+  "author": "Rafael Lopes Schneider",
+  "license": "ISC",
+  "types": "./",
+  "bugs": {
+    "url": "https://github.com/nstseek/react-ui/issues"
+  },
+  "homepage": "https://github.com/nstseek/react-ui#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
