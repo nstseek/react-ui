@@ -1,4 +1,4 @@
-import ReactUIContext from '../../context/mainContext';
+import { ReactUIContext } from '../../context';
 import React, { useContext } from 'react';
 import Backdrop from '../Backdrop/Backdrop';
 

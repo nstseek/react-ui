@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import ReactUIContext from '../../context/mainContext';
+import { ReactUIContext } from '../../context/mainContext';
 import React, { useContext } from 'react';
 import Backdrop from '../Backdrop/Backdrop';
 

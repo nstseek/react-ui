@@ -16,7 +16,7 @@ export interface ContextState {
   popLoading();
 }
 
-const useRootContext = () => {
+export const useRootContext = () => {
   const addModal = (modal: ModalData) => {
     const modalArr = [...ctx.modal, modal];
     setCtx({ ...ctx, modal: modalArr });
@@ -49,5 +49,3 @@ const useRootContext = () => {
 
   return ctx;
 };
-
-export default useRootContext;
