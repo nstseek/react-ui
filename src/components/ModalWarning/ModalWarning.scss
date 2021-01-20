@@ -1,0 +1,47 @@
+@import '../../scss/mixins/effects.scss';
+@import '../../assets/fontawesome/scss/fontawesome.scss';
+@import '../../assets/fontawesome/scss/solid.scss';
+@import '../../assets/fontawesome/scss/regular.scss';
+@import '../../assets/fontawesome/scss/brands.scss';
+
+div.ModalWarning {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 2000;
+  width: 300px;
+  min-height: 400px;
+  background-color: white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 34px;
+  i {
+    font-size: 72pt;
+    &#error {
+      color: red;
+    }
+    &#ok {
+      color: green;
+    }
+    &#warning {
+      color: goldenrod;
+    }
+  }
+  p {
+    text-align: center;
+    &#title {
+      font-weight: 800;
+      font-size: 1.5em;
+    }
+  }
+  button {
+    @include hover-effect(210deg, 100%, 50%);
+    border: 0;
+    margin-bottom: 0;
+    margin-top: auto;
+    color: white;
+    border-radius: 25px;
+    padding: 13px 21px;
+  }
+}

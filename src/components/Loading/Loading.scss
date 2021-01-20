@@ -1,0 +1,19 @@
+@import '../../assets/fontawesome/scss/fontawesome.scss';
+@import '../../assets/fontawesome/scss/solid.scss';
+@import '../../assets/fontawesome/scss/regular.scss';
+@import '../../assets/fontawesome/scss/brands.scss';
+
+@keyframes fullRotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+div.Backdrop i#loading {
+  color: #008bc7;
+  font-size: 70pt;
+  animation: fullRotation 2s linear infinite;
+}
