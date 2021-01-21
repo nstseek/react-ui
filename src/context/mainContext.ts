@@ -1,4 +1,6 @@
 import React from 'react';
-import { ContextState } from './contextHook';
+import { useRootContext } from './contextHook';
 
-export const ReactUIContext = React.createContext<ContextState>(null);
+export const ReactUIContext = React.createContext<
+  ReturnType<typeof useRootContext>
+>(null);

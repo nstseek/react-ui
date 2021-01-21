@@ -12,7 +12,7 @@ const ModalWarning: React.FC<Props> = (props) => {
     require('./ModalWarning.scss');
   }
   const ctx = useContext(ReactUIContext);
-  const modal = ctx.modal[ctx.modal.length - 1];
+  const modal = ctx.state.modal[ctx.state.modal.length - 1];
 
   if (!modal) {
     return null;

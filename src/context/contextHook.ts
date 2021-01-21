@@ -14,10 +14,6 @@ export interface ModalModel extends ModalData {
 export interface ContextState {
   loading: boolean[];
   modal: ModalModel[];
-  addModal(modal: ModalData);
-  removeModal(id: ModalData['id']);
-  pushLoading();
-  popLoading();
 }
 
 const generateStr = (length: number) => {
@@ -29,36 +25,46 @@ const generateStr = (length: number) => {
 };
 
 export const useRootContext = () => {
+  const [state, setState] = useState<ContextState>({
+    loading: [],
+    modal: []
+  });
+
   const addModal = (modal: ModalData) => {
-    const tmpModal = { ...modal, id: modal.id ? modal.id : generateStr(9) };
-    const modalArr = [...ctx.modal, tmpModal];
-    setCtx({ ...ctx, modal: modalArr });
+    setState((previousState) => {
+      const tmpModal = { ...modal, id: modal.id ? modal.id : generateStr(6) };
+      const modalArr = [...previousState.modal, tmpModal];
+      return { ...previousState, modal: modalArr };
+    });
   };
 
   const removeModal = (id: ModalData['id']) => {
-    const modalArr = ctx.modal.filter((modal) => modal.id !== id);
-    setCtx({ ...ctx, modal: modalArr });
+    setState((previousState) => {
+      const modalIndex = previousState.modal.findIndex(
+        (modal) => modal.id === id
+      );
+      const modalArr = previousState.modal;
+      if (typeof modalIndex === 'number' && modalIndex >= 0) {
+        modalArr.splice(modalIndex, 1);
+      }
+      return { ...previousState, modal: modalArr };
+    });
   };
 
   const pushLoading = () => {
-    const loadingArr = [...ctx.loading, true];
-    setCtx({ ...ctx, loading: loadingArr });
+    setState((previousState) => {
+      const loadingArr = [...previousState.loading, true];
+      return { ...previousState, loading: loadingArr };
+    });
   };
 
   const popLoading = () => {
-    const loadingArr = ctx.loading;
-    loadingArr.splice(0, 1);
-    setCtx({ ...ctx, loading: loadingArr });
+    setState((previousState) => {
+      const loadingArr = previousState.loading;
+      loadingArr.splice(0, 1);
+      return { ...previousState, loading: loadingArr };
+    });
   };
 
-  const [ctx, setCtx] = useState<ContextState>({
-    loading: [],
-    modal: [],
-    addModal,
-    removeModal,
-    pushLoading,
-    popLoading
-  });
-
-  return ctx;
+  return { state, addModal, removeModal, pushLoading, popLoading };
 };

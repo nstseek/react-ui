@@ -13,7 +13,7 @@ const Loading: React.FC<Props> = (props) => {
     require('./Loading.scss');
   }
 
-  return ctx.loading.length > 0 ? (
+  return ctx.state.loading.length > 0 ? (
     <Backdrop>
       <i id='loading' className='fas fa-spinner'></i>
     </Backdrop>
