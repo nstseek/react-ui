@@ -1,6 +1,6 @@
-## react-forms
-Forms on React made simple - that's it.
+## react-ui
+UI basic components with logic to keep your application as simple and easy as possible.
 
-With a few lines of code you can create a complete form, with validation, getters, and types (TypeScript)
+With a few lines of code you can manage loadings and modals, creating stacks with warnings and loadings that will pop on the screen or just using a few useful components.
 
-Code snippet to be provided.
+Code snippets to be provided.
