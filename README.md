@@ -7,4 +7,4 @@ UI basic components with logic to keep your application as simple and easy as po
 
 With a few lines of code you can manage loadings and modals, creating stacks with warnings and loadings that will pop on the screen or just using a few useful components.
 
-Code snippets to be provided.
+Code snippets and live examples will be provided soon.
